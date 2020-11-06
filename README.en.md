@@ -1,36 +1,24 @@
-# copy-move
+# A serial image copy-move forgery localization
+scheme with source/target distinguishment
 
-#### Description
-{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}
+[Chen B, Tan W, Coatrieux G, et al. A serial image copy-move forgery localization scheme with source/target distinguishment[J]. IEEE Transactions on Multimedia, 2020.](https://ieeexplore.ieee.org/abstract/document/9207851/)
 
-#### Software Architecture
-Software architecture description
+#### Prerequisites
+- Linux
+- NVIDIA GPU+CUDA CuDNN (CPU mode may also work, but untested)
+- Install Tensorflow and dependencies
 
-#### Installation
+#### Training and Test Details
+For training and testing details，please refer to the proposed paper.
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### Using
 
-#### Instructions
+1.  Place the test image in the root directory and name it as 'test.png'
+2.  Run CMSDNetTest.py, then you will get the result of CMSDNet
+3.  Run STRDNetTest.py, then you will get the result of STRDNet
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### Related Works
 
-#### Contribution
-
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
-
-
-#### Gitee Feature
-
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.  Y. Wu, W. Abd-Almageed, and P. Natarajan, ‘‘BusterNet: Detecting
+    copy-move image forgery with source/target localization,’’ in Proc. Eur.
+    Conf. Comput. Vis. (ECCV)., pp. 168–184, 2018.
