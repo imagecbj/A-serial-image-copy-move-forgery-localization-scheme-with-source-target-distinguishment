@@ -6,18 +6,22 @@ from scipy import misc
 from PIL import Image
 from STRDNet import creat_test_model as model_target_source
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 warnings.filterwarnings("ignore")
 
-# params !!!
-CUT_ENLARGE = 15 # 25
-KERNEL_SIZE_NOISE_DOWN = 3
+# parms !!!
+CUT_ENLARGE = 5 # 5 15 25
+KERNEL_SIZE_NOISE_DOWN = 3 # 5
 DIST_RATE = 0.55
 DIST_RATE_COVERAGE = 0.68
 
 
 def creat_arr_ts(index, test_model_st, mask, image, dist_rate):
     output_mask = np.zeros((256, 256, 3), dtype=np.uint8)
+
+    # mask = np.array(mask).astype(bool)
+    # mask = morphology.remove_small_objects(mask, min_size=200, connectivity=1)
+    # mask = (np.array(mask) * 255).astype(float) 
 
     kernel = np.ones((KERNEL_SIZE_NOISE_DOWN, KERNEL_SIZE_NOISE_DOWN), np.uint8)
     mask = cv.morphologyEx(mask, cv.MORPH_OPEN, kernel, iterations=2)
@@ -44,8 +48,7 @@ def creat_arr_ts(index, test_model_st, mask, image, dist_rate):
         patch = image[max(stat[1]-CUT_ENLARGE,0):min(stat[1]+stat[3]+CUT_ENLARGE,256),max(stat[0]-CUT_ENLARGE,0):min(stat[0]+stat[2]+CUT_ENLARGE,256),...]
         if patch.shape != (128, 128, 3):
             patch = misc.imresize(patch, [128, 128], interp="bilinear")
-            misc.imsave("patch_%d.png" % i, patch)
-        # print(patch.shape)
+        # misc.imsave("patch_%d.png" % i, patch)
         patches.append(np.expand_dims(patch, 0))
     if len(patches) < 2:
         return None

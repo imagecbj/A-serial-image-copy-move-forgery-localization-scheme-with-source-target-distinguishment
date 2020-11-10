@@ -1,12 +1,10 @@
-# A serial image copy-move forgery localization
-scheme with source/target distinguishment
-
+# A serial image copy-move forgery localization scheme with source/target distinguishment
 [Chen B, Tan W, Coatrieux G, et al. A serial image copy-move forgery localization scheme with source/target distinguishment[J]. IEEE Transactions on Multimedia, 2020.](https://ieeexplore.ieee.org/abstract/document/9207851/)
 
 #### Prerequisites
 - Linux
-- NVIDIA GPU+CUDA CuDNN (CPU mode may also work, but untested)
-- Install Tensorflow and dependencies
+- NVIDIA GPU+CUDA CuDNN 
+- Install TensorFlow and dependencies
 
 #### Training and Test Details
 For training and testing details，please refer to the proposed paper.
