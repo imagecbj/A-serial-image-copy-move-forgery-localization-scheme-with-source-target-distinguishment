@@ -15,7 +15,10 @@ In this paper, we improve the existing parallel deep neural network (DNN) scheme
 - Testing: To test the generalization ability of our algorithm, three standard datasets, i.e., CASIA v2.0, CoMoFoD and COVERAGE, are considered to evaluate the performance of the trained model obtained from the synthetic dataset of Wu et al. 
 
 #### Using
-
+##### Training
+1. Train CMSDNet by running CMSDNet.py
+2. Train STRDNet by running STRDNet.py
+##### Testing
 1.  Place the test image in the root directory and name it as 'test.png'
 2.  Run CMSDNetTest.py, then you will get the result of CMSDNet
 3.  Run STRDNetTest.py, then you will get the result of STRDNet
